@@ -2,6 +2,8 @@
 # CNA 330
 # Zachary Rubin, zrubin@rtc.edu
 # T.J. Dewey, tjdewey@student.rtc.edu
+# Help on add new job function from Mohhammad Pakizehjam
+# Help on entire document from Justin Ellis
 import mysql.connector
 import sys
 import json
