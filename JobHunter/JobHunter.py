@@ -5,10 +5,10 @@
 # Help on add new job function from Mohhammad Pakizehjam
 # Help on entire document from Justin Ellis
 import mysql.connector
-import sys
+#import sys
 import json
 import urllib.request
-import os
+#import os
 import time
 
 # Connect to database
@@ -37,12 +37,6 @@ def query_sql(cursor, query):
 # Add a new job
 def add_new_job(cursor, jobdetails):
     ## Add your code here
-    query = "INSERT INTO"
-    return query_sql(cursor, query)
-
-# Check if new job
-def check_if_job_exists(cursor, jobdetails):
-    ## Add your code here
     type = jobdetails['type']
     title = jobdetails['title']
     description = jobdetails['description']
@@ -51,9 +45,9 @@ def check_if_job_exists(cursor, jobdetails):
     company = jobdetails['company']
     location = jobdetails['location']
     how_to_apply = jobdetails['how_to_apply']
-    query = (INSERT INTO jobs (catagories) VALUES(%s, %s, %s, %s, %s, %s, %s, %s,)
-                           (type, title, description, job_id, created_at, company,
-                            location, how_to_apply))
+    query = ("INSERT INTO jobs (type, title, description, job_id, created_at, company, location, how_to_apply)"
+                    "VALUES(%s, %s, %s, %s, %s, %s, %s, %s,)"
+                    (type, title, description, job_id, created_at, company, location, how_to_apply))
     return query_sql(cursor, query)
 
 # Check if new job
@@ -83,23 +77,23 @@ def fetch_new_jobs(arg_dict):
     return jsonpage
 
 # Load a text-based configuration file
-def load_config_file(filename):
-    argument_dictionary = 0
-    # Code from https://github.com/RTCedu/CNA336/blob/master/Spring2018/FileIO.py
-    rel_path = os.path.abspath(os.path.dirname(__file__))
-    file = 0
-    file_contents = 0
-    try:
-        file = open(filename, "r")
-        file_contents = file.read()
-    except FileNotFoundError:
-        print("File not found, it will be created.")
-        file = open(filename, "w")
-        file.write("")
-        file.close()
+#def load_config_file(filename):
+#    argument_dictionary = 0
+#    # Code from https://github.com/RTCedu/CNA336/blob/master/Spring2018/FileIO.py
+#    rel_path = os.path.abspath(os.path.dirname(__file__))
+#    file = 0
+#    file_contents = 0
+#    try:
+#        file = open(filename, "r")
+#        file_contents = file.read()
+#    except FileNotFoundError:
+#        print("File not found, it will be created.")
+#        file = open(filename, "w")
+#        file.write("")
+#        file.close()
 
     ## Add in information for argument dictionary
-    return argument_dictionary
+#    return argument_dictionary
 
 # Main area of the code.
 def jobhunt(arg_dict, cursor):
